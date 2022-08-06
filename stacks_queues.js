@@ -9,7 +9,9 @@
 
 //Stacks
 
-//Can be build by Arrays and Linked lists
+// Stacks with
+
+//Stacks with Linked List
 
 class Node {
   constructor(value) {
@@ -46,9 +48,9 @@ class Stack {
   pop() {
     if (this.lenght === 0) {
       return null;
-    } 
-    if (this.top === this.bottom){
-        this.bottom = null;
+    }
+    if (this.top === this.bottom) {
+      this.bottom = null;
     }
     this.top = this.top.next;
     this.lenght--;
@@ -56,17 +58,17 @@ class Stack {
   }
 }
 
-const myStack = new Stack();
-myStack.peek();
-myStack.push("google");
-myStack.push("udemy");
-myStack.push("discord");
-console.log(myStack);
-myStack.pop();
-console.log(myStack);
-myStack.pop();
-myStack.pop();
-console.log(myStack);
+// const myStack = new Stack();
+// myStack.peek();
+// myStack.push("google");
+// myStack.push("udemy");
+// myStack.push("discord");
+// console.log(myStack);
+// myStack.pop();
+// console.log(myStack);
+// myStack.pop();
+// myStack.pop();
+// console.log(myStack);
 
 //Queues => functions : lookup O(n) , enqueu O(1) , dequeue O(1) , peek O(1)
 //      FIFO: first in first out
@@ -75,6 +77,60 @@ console.log(myStack);
 //      Inefficient, when remove first element shifting data
 
 //Queues
+
+class Queue {
+  constructor() {
+    this.first = null;
+    this.last = null;
+    this.lenght = 0;
+  }
+
+  peak() {
+    return this.first;
+  }
+
+  enqueue(value) {
+    const newNode = new Node(value);
+
+    if (this.lenght === 0) {
+      this.first = newNode;
+      this.last = newNode;
+    } else {
+      this.last.next = newNode;
+      this.last = newNode;
+    }
+    this.lenght++;
+  }
+
+  dequeue() {
+    if (!this.first) {
+      return null;
+    }
+    if (this.first === this.last) {
+      this.last = null;
+    }
+    const holdingPointer = this.first;
+    this.first = this.first.next;
+
+    this.lenght--;
+  }
+}
+
+const myQueue = new Queue();
+myQueue.enqueue("Joy");
+myQueue.enqueue("Matt");
+myQueue.enqueue("Pavel");
+
+console.log(myQueue);
+
+myQueue.dequeue();
+console.log(myQueue);
+myQueue.dequeue();
+console.log(myQueue);
+myQueue.dequeue();
+console.log(myQueue);
+myQueue.dequeue();
+console.log(myQueue);
 
 // Can be built by Arrays and Linked List
 // Linked List would better
