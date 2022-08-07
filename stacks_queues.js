@@ -2,6 +2,9 @@
 // Users can access the first and last elements
 // There are less actions than linked list and hash tables
 
+// + Fast operations, Fast Peak, Ordered, 
+// - Slow Lookup
+
 // Stacks => functions: lookup O(n), pop O(1), push O(1), peek O(1)
 //      LIFO: Last in first out
 //      Most languages have stack
