@@ -17,7 +17,7 @@ inception();
 //2 Identfy the recursive case
 //3 Get closer and closer and return when needed. Usually you have 2 returns.
 
-//Find Factorial Recursive
+//Find Factorial Recursive O(n)
 
 function findFactorialRecursive(number) {
   console.log(number);
@@ -29,5 +29,14 @@ function findFactorialRecursive(number) {
   return number * findFactorialRecursive(number -1);
 }
 
- console.log(findFactorialRecursive(5)) 
+ // Find Fibonacci Sequence
 
+ function findFibonacciRecursive(n){
+    if( n<2){
+        return n; 
+    }
+
+    return findFibonacciRecursive(n-1) + findFibonacciRecursive(n-2);
+ }
+
+ console.log( findFibonacciRecursive(24) )
